@@ -1,0 +1,2 @@
+Hey! I'm trying to find the most suitable type of database for my project. The project is a social platform with millions of users. We need to store profiles, posts and connections between users. We expect 80% read operations and 20% write operations. We require high data read speed. Also scalability is important - user base will grow. 
+Can you suggest a DB using your Chain-of-Thought Reasoning technique?
