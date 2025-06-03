@@ -1,0 +1,33 @@
+Sure! Here's a clear, well-structured bug ticket based on your informal report:
+
+---
+
+**Title:**
+Logout Button Unresponsive on Safari Browser
+
+**Description:**
+In the Angular-based room booking application, the Logout button does not function as expected when accessed via the Safari browser. Clicking the button results in no visible response or action, preventing users from logging out properly.
+
+**Steps to Reproduce:**
+
+1. Open the room booking application using the Safari browser.
+2. Log in with valid credentials (if not already logged in).
+3. Locate and click the Logout button.
+
+**Expected vs Actual Behavior:**
+
+* *Expected:* Clicking the Logout button should end the user session and redirect to the login screen or homepage.
+* *Actual:* Nothing happens when the Logout button is clicked. The user remains logged in with no visible feedback or redirection.
+
+**Environment:**
+
+* Browser: Safari (exact version not specified, recommended to test on latest and common versions)
+* Application: Angular-based room booking app
+* Device: Affected on both macOS and iOS versions of Safari (to be confirmed)
+
+**Severity or Impact:**
+**High** – Users on Safari cannot log out, which can lead to session security issues and a poor user experience.
+
+---
+
+Let me know if you'd like this tailored further (e.g. include app version, device info, or console error logs).

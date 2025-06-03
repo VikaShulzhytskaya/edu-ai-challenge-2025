@@ -1,0 +1,9 @@
+Hello! In my angular app for room booking we've found next bug: Logout button doesn’t work on Safari. It just doesn’t respond.
+Could you please convert informal bug report like this into a clear, well-structured bug ticket? 
+The output should follow this format:
+- Title
+- Description
+- Steps to Reproduce
+- Expected vs Actual Behavior
+- Environment
+- Severity or Impact
