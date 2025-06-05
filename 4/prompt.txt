@@ -1,0 +1,28 @@
+Hello! I have a part of code, that I need to analyze from three expert perspectives
+1) as an experienced JS developer
+2) as a security engineer
+3) as a performance specialist
+Please provide distinct and relevant feedback for each of the three roles, cover the specified focus areas for each role and offer actionable and specific recommendations, not just generic statements.
+
+Here is the code:
+function processUserData(data: any) {
+  var users = [];
+
+  for (var i = 0; i < data.length; i++) {
+    var user = {
+      id: data[i].id,
+      name: data[i].name,
+      email: data[i].email,
+      active: data[i].status === 'active' ? true : false
+    };
+    users.push(user);
+  }
+  console.log("Processed " + users.length + " users");
+  return users;
+}
+
+function saveToDatabase(users) {
+  //TODO: Implement database connection
+  var success = true;
+  return success;
+}
