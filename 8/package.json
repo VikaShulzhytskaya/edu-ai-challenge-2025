@@ -1,0 +1,33 @@
+{
+  "name": "validation-library",
+  "version": "1.0.0",
+  "description": "Type-safe validation library for TypeScript",
+  "main": "dist/schema.js",
+  "types": "dist/schema.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/demo.js",
+    "dev": "npm run build && node dist/demo.js",
+    "test": "npm run build && node dist/test-suite.js",
+    "test:quick": "npx tsc test-suite.ts --outDir dist && node dist/test-suite.js",
+    "test:coverage": "npm run build && c8 --reporter=text --reporter=html --reporter=json node dist/test-suite.js",
+    "coverage:report": "npm run test:coverage && c8 report --reporter=text --reporter=html",
+    "clean": "rmdir /s /q dist 2>nul || true",
+    "rebuild": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "validation",
+    "typescript",
+    "schema",
+    "type-safe"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "c8": "^8.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "*.md"
+  ]
+} 
