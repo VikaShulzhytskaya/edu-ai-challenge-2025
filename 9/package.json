@@ -1,0 +1,19 @@
+{
+  "name": "service-analyzer",
+  "version": "1.0.0",
+  "description": "A console application that analyzes services and products to generate comprehensive markdown reports",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "analyze": "node index.js",
+    "setup": "node setup.js"
+  },
+  "author": "Vention",
+  "license": "MIT",
+  "dependencies": {
+    "openai": "^4.24.0",
+    "readline-sync": "^1.4.10",
+    "chalk": "^4.1.2",
+    "fs": "^0.0.1-security"
+  }
+} 
