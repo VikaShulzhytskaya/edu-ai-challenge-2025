@@ -78,7 +78,8 @@ Each generated report includes:
 The application provides an interactive menu with three options:
 
 1. **Analyze by Service Name**: Enter a known service name like "Spotify", "Notion", "Netflix", etc.
-2. **Exit**: Close the application
+2. **Analyze by Service Description**
+3. **Exit**: Close the application
 
 ### Example Usage
 
@@ -87,9 +88,10 @@ The application provides an interactive menu with three options:
 
 Choose an option:
 1. Analyze by service name (e.g., Spotify, Notion)
-2. Exit
+2. Analyze by service description
+3. Exit
 
-Enter your choice (1, 2): 1
+Enter your choice (1, 2, 3): 1
 Enter service name: Spotify
 🔍 Analyzing service...
 

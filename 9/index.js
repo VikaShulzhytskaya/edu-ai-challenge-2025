@@ -33,11 +33,11 @@ class ServiceAnalyzer {
     };
   }
 
-  async analyzeService(input) {
+  async analyzeService(input, isDescription = false) {
     try {
       console.log(chalk.blue('🔍 Analyzing service...'));
       
-      const prompt = this.buildAnalysisPrompt(input);
+      const prompt = this.buildAnalysisPrompt(input, isDescription);
       
       const response = await openai.chat.completions.create({
         model: "gpt-4.1-mini",
@@ -61,12 +61,26 @@ class ServiceAnalyzer {
     }
   }
 
-  buildAnalysisPrompt(input) {
-    const basePrompt = `
+  buildAnalysisPrompt(input, isDescription = false) {
+    let basePrompt = '';
+    
+    if (isDescription) {
+      basePrompt = `
+Please provide a comprehensive analysis based on the following service description:
+
+"${input}"
+
+Structure your response as a detailed markdown report with exactly these sections:
+`;
+    } else {
+      basePrompt = `
 Please provide a comprehensive analysis of the service ${input}
 
 Structure your response as a detailed markdown report with exactly these sections:
+`;
+    }
 
+    basePrompt += `
 ## Brief History
 - Founding year, key milestones, major developments
 - Important acquisitions, funding rounds, or pivotal moments
@@ -161,20 +175,25 @@ Please ensure each section is substantial and informative. Use bullet points whe
       try {
         console.log(chalk.yellow('\nChoose an option:'));
         console.log('1. Analyze by service name (e.g., Spotify, Notion)');
-        console.log('2. Exit');
+        console.log('2. Analyze by service description');
+        console.log('3. Exit');
 
-        const choice = readlineSync.question(chalk.cyan('\nEnter your choice (1, 2): '));
+        const choice = readlineSync.question(chalk.cyan('\nEnter your choice (1, 2, 3): '));
 
-        if (choice === '2') {
+        if (choice === '3') {
           console.log(chalk.green('\n👋 Thanks for using Service Analyzer!'));
           break;
         }
 
-        let input, serviceName;
+        let input, serviceName, isDescription = false;
 
         if (choice === '1') {
           input = readlineSync.question(chalk.cyan('Enter service name: '));
           serviceName = input;
+        } else if (choice === '2') {
+          input = readlineSync.question(chalk.cyan('Enter service description: '));
+          serviceName = input;
+          isDescription = true;
         } else {
           console.log(chalk.red('Invalid choice. Please try again.'));
           continue;
@@ -186,7 +205,7 @@ Please ensure each section is substantial and informative. Use bullet points whe
         }
 
         // Generate analysis
-        const analysis = await this.analyzeService(input);
+        const analysis = await this.analyzeService(input, isDescription);
         const formattedReport = this.formatMarkdownReport(analysis);
 
         // Display the report
