@@ -1,0 +1,27 @@
+{
+    "word_count": 971,
+    "speaking_speed_wpm": 130,
+    "duration_seconds": 448,
+    "frequently_mentioned_topics": [
+      {
+        "topic": "Chest pain symptoms and characteristics",
+        "mentions": 15
+      },
+      {
+        "topic": "Concern about heart attack and family history",
+        "mentions": 6
+      },
+      {
+        "topic": "Diagnostic tests (ECG, blood work)",
+        "mentions": 3
+      },
+      {
+        "topic": "Past medical history and lifestyle factors",
+        "mentions": 7
+      },
+      {
+        "topic": "Recent flu illness and its relation to symptoms",
+        "mentions": 3
+      }
+    ]
+  }
