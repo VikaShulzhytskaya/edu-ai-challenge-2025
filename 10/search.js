@@ -66,12 +66,12 @@ function filterProducts(criteria) {
   let filtered = [...products];
 
   // Filter by maximum price
-  if (criteria.max_price !== undefined) {
+  if (criteria.max_price) {
     filtered = filtered.filter(product => product.price <= criteria.max_price);
   }
 
   // Filter by minimum rating
-  if (criteria.min_rating !== undefined) {
+  if (criteria.min_rating) {
     filtered = filtered.filter(product => product.rating >= criteria.min_rating);
   }
 
